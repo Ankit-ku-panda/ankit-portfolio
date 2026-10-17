@@ -1,0 +1,42 @@
+# Publish only the static portfolio. Python, SQLite and admin are not uploaded.
+name: Publish portfolio to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # Check all public repositories every six hours (UTC), including new repos.
+  schedule:
+    - cron: '17 */6 * * *' 
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download repository source
+        uses: actions/checkout@v6
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Sync current public repositories
+        run: python3 scripts/sync_github.py
+      - name: Build standalone portfolio
+        run: python3 scripts/build_public.py --output _site
+      - name: Upload public files
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Publish to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

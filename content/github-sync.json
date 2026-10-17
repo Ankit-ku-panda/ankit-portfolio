@@ -1,0 +1,102 @@
+{
+    "owner": "Ankit-ku-panda",
+    "exclude_repos": [
+        "ptcg-agent"
+    ],
+    "include_forks": true,
+    "additional_repos": [],
+    "featured_repos": [
+        "Ankit-ku-panda/Terrapath-3d-route-planner",
+        "Ankit-ku-panda/SAP-ABAP-LocalAI",
+        "Ankit-ku-panda/Hoyahh-Your-Own-Browser",
+        "Ankit-ku-panda/TouchTalk-Arduino-Project",
+        "Ankit-ku-panda/3D-Motion-Camera",
+        "Ankit-ku-panda/Arduino-CapaciSense-Touch-Sensing-System"
+    ],
+    "overrides": {
+        "Ankit-ku-panda/Terrapath-3d-route-planner": {
+            "id": "terrapath",
+            "title": "TerraPath",
+            "category": "Web tools",
+            "summary": "3D terrain routes, cone geometry, and a clearer way to explore the path ahead.",
+            "details": "An interactive route-planning prototype with a cone geodesic lab, terrain height-map import, slope-constrained graph search, elevation profiles, and material estimates. Built with plain JavaScript, Canvas, and SVG.",
+            "limitation": "An educational and preliminary planning tool; not a validated engineering or navigation system.",
+            "tags": [
+                "JavaScript",
+                "Canvas",
+                "Pathfinding"
+            ],
+            "image": "/assets/terrapath.png"
+        },
+        "Ankit-ku-panda/SAP-ABAP-LocalAI": {
+            "id": "sap",
+            "title": "SAP ABAP LocalAI",
+            "category": "AI experiments",
+            "summary": "A local development companion for exploring ABAP, with a lightweight browser interface.",
+            "details": "A Windows-oriented local AI assistant with Python application code, model configuration, a file-based knowledge directory, and setup scripts. Designed to keep an ABAP assistance workflow on your own computer.",
+            "limitation": "Models and runtimes need separate setup. Generated code requires review and testing in an SAP environment.",
+            "tags": [
+                "Python",
+                "Local AI",
+                "SAP / ABAP"
+            ],
+            "image": "/assets/sap.png"
+        },
+        "Ankit-ku-panda/Hoyahh-Your-Own-Browser": {
+            "id": "hoyahh",
+            "title": "Hoyahh",
+            "category": "Web tools",
+            "summary": "A personal browser, a private-search experiment, and a workspace to make your own.",
+            "details": "A Chromium-based Electron browser with a customizable new-tab dashboard. A Python search API connects SearXNG and Tor services through Docker, with search controls and a simplified text reader.",
+            "limitation": "An early personal browser build. Tor routing does not provide Tor Browser’s full anonymity protections.",
+            "tags": [
+                "Electron",
+                "Python",
+                "Docker"
+            ],
+            "image": "/assets/hoyahh.png"
+        },
+        "Ankit-ku-panda/TouchTalk-Arduino-Project": {
+            "id": "touchtalk",
+            "title": "TouchTalk",
+            "category": "Physical computing",
+            "summary": "Turning a simple touch into an everyday message, one input at a time.",
+            "details": "An Arduino communication prototype that maps eight inputs to six fixed phrases, Repeat, and Clear. It displays messages on a 16×2 I2C LCD, prints them to Serial Monitor, and gives buzzer feedback. Includes a Wokwi simulation.",
+            "limitation": "A fixed-phrase prototype, not a sign-language translator. The buzzer provides feedback rather than spoken output.",
+            "tags": [
+                "Arduino",
+                "C++",
+                "Wokwi"
+            ],
+            "image": "/assets/touchtalk.png"
+        },
+        "Ankit-ku-panda/3D-Motion-Camera": {
+            "id": "depthmotion",
+            "title": "DepthMotion",
+            "category": "AI experiments",
+            "summary": "Exploring motion and perspective through an offline Android depth-effect camera.",
+            "details": "An experimental Android application using an offline depth model and OpenGL to add a motion-parallax illusion to camera frames, photos, and videos. It can export a PNG or record silent H.264 video.",
+            "limitation": "A depth illusion rather than stereoscopic 3D. Strong effects can warp edges; physical-device validation is still needed.",
+            "tags": [
+                "Android",
+                "ONNX",
+                "OpenGL"
+            ],
+            "image": "/assets/depthmotion.gif"
+        },
+        "Ankit-ku-panda/Arduino-CapaciSense-Touch-Sensing-System": {
+            "id": "capacisense",
+            "title": "CapaciSense",
+            "category": "Physical computing",
+            "summary": "A foil pad, an Arduino, and a hands-on look at capacitive touch.",
+            "details": "A beginner-friendly Arduino experiment using a 10 MΩ resistor and the CapacitiveSensor library to detect touch at a foil pad and control an LED. Documentation connects the basic concept to smartphone touch sensing.",
+            "limitation": "The reading is a relative timing value, not capacitance in farads. Phone touch controllers use a different sensor architecture.",
+            "tags": [
+                "Arduino",
+                "Capacitive sensing",
+                "Wokwi"
+            ],
+            "image": "/assets/capacisense.jpg"
+        }
+    }
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "terrapath",
+    "repo": "Terrapath-3d-route-planner",
+    "path": "terrapath-cone-lab.png",
+    "commit": "d847f298f654db9abc530b4a435818f486aa66e8",
+    "file": "terrapath.png",
+    "sha256": "8e47d359620d8447e7723c35f8e2da2051842554778832b421b91d880f2e9e19"
+  },
+  {
+    "id": "sap",
+    "repo": "SAP-ABAP-LocalAI",
+    "path": "SAP ABAP Local Studio empty chat.png",
+    "commit": "8b5de5dbd4c863c69a753eb6c8cf774f58223fde",
+    "file": "sap.png",
+    "sha256": "e3d55246cc1cbb05c748cf2ab042469fcb9839e5eb0f8064013e33e1e875c8e3"
+  },
+  {
+    "id": "touchtalk",
+    "repo": "TouchTalk-Arduino-Project",
+    "path": "assets/wokwi-preview.png",
+    "commit": "74982f87e02d62e796e932e78ee2c7600cfe17de",
+    "file": "touchtalk.png",
+    "sha256": "423c02bac03983cc45c3dcd6aaa45f21fb69782a097bc22700e5753232469ae2"
+  },
+  {
+    "id": "capacisense",
+    "repo": "Arduino-CapaciSense-Touch-Sensing-System",
+    "path": "Wokwi/test-on.jpg",
+    "commit": "8bcce6c3f02e75e47a56fb0bedf3e5e190b48103",
+    "file": "capacisense.jpg",
+    "sha256": "95a4496d186d5dcb7d2ba845e6bac09f869aa9d43219f448e1c34ae49234beff"
+  },
+  {
+    "id": "hoyahh",
+    "repo": "Hoyahh-Your-Own-Browser",
+    "path": "docs/images/desktop-dashboard.png",
+    "commit": "e80ed4854abef7c9d32bdba5752bce591133591d",
+    "file": "hoyahh.png",
+    "sha256": "d4e61c5e6e388bf647aa79b4d9a04b1ec4e341b9745a074d4233e1c81177f88c"
+  },
+  {
+    "id": "depthmotion",
+    "repo": "3D-Motion-Camera",
+    "path": "docs/demos/neon-city.gif",
+    "commit": "b936fe19c9c207cba4992ccb958775a3aeb5d61c",
+    "file": "depthmotion.gif",
+    "sha256": "fca165c586cd48f3f3bbb3f5857d357851a269a139207e1d4425ae09c72c31ff"
+  }
+]

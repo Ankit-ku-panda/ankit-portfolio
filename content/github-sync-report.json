@@ -1,0 +1,194 @@
+{
+    "synced_at": "2026-10-15T08:55:42.961302+00:00",
+    "owner": "Ankit-ku-panda",
+    "count": 23,
+    "pinned_repos": [
+        "Ankit-ku-panda/Portable-USB-AI",
+        "Ankit-ku-panda/AI-Anti-Peeping-Screen-Privacy-Guard",
+        "Ankit-ku-panda/women-saftey-app",
+        "Ankit-ku-panda/Hoyahh-Your-Own-Browser",
+        "Ankit-ku-panda/Arduino-CapaciSense-Touch-Sensing-System",
+        "Ankit-ku-panda/SAP-ABAP-LocalAI"
+    ],
+    "sources": [
+        {
+            "repo": "Ankit-ku-panda/Portable-USB-AI",
+            "readme": "https://github.com/Ankit-ku-panda/Portable-USB-AI/blob/main/README.md",
+            "image_source": "https://raw.githubusercontent.com/Ankit-ku-panda/Portable-USB-AI/main/portableai-interface.png",
+            "image": "/assets/github/ankit-ku-panda-portable-usb-ai.png",
+            "notes": []
+        },
+        {
+            "repo": "Ankit-ku-panda/AI-Anti-Peeping-Screen-Privacy-Guard",
+            "readme": "https://github.com/Ankit-ku-panda/AI-Anti-Peeping-Screen-Privacy-Guard/blob/main/README.md",
+            "image_source": "",
+            "image": "",
+            "notes": [
+                "No usable repository image found; content-only card."
+            ]
+        },
+        {
+            "repo": "Ankit-ku-panda/women-saftey-app",
+            "readme": "https://github.com/Ankit-ku-panda/women-saftey-app/blob/main/README.md",
+            "image_source": "https://raw.githubusercontent.com/Ankit-ku-panda/women-saftey-app/main/public/logo192.png",
+            "image": "/assets/github/ankit-ku-panda-women-saftey-app.png",
+            "notes": []
+        },
+        {
+            "repo": "Ankit-ku-panda/Hoyahh-Your-Own-Browser",
+            "readme": "https://github.com/Ankit-ku-panda/Hoyahh-Your-Own-Browser/blob/main/README.md",
+            "image_source": "",
+            "image": "/assets/hoyahh.png",
+            "notes": []
+        },
+        {
+            "repo": "Ankit-ku-panda/Arduino-CapaciSense-Touch-Sensing-System",
+            "readme": "https://github.com/Ankit-ku-panda/Arduino-CapaciSense-Touch-Sensing-System/blob/main/README.md",
+            "image_source": "",
+            "image": "/assets/capacisense.jpg",
+            "notes": []
+        },
+        {
+            "repo": "Ankit-ku-panda/SAP-ABAP-LocalAI",
+            "readme": "https://github.com/Ankit-ku-panda/SAP-ABAP-LocalAI/blob/main/README.md",
+            "image_source": "",
+            "image": "/assets/sap.png",
+            "notes": []
+        },
+        {
+            "repo": "Ankit-ku-panda/Terrapath-3d-route-planner",
+            "readme": "https://github.com/Ankit-ku-panda/Terrapath-3d-route-planner/blob/main/README.md",
+            "image_source": "",
+            "image": "/assets/terrapath.png",
+            "notes": []
+        },
+        {
+            "repo": "Ankit-ku-panda/TouchTalk-Arduino-Project",
+            "readme": "https://github.com/Ankit-ku-panda/TouchTalk-Arduino-Project/blob/main/README.md",
+            "image_source": "",
+            "image": "/assets/touchtalk.png",
+            "notes": []
+        },
+        {
+            "repo": "Ankit-ku-panda/3D-Motion-Camera",
+            "readme": "https://github.com/Ankit-ku-panda/3D-Motion-Camera/blob/main/README.md",
+            "image_source": "",
+            "image": "/assets/depthmotion.gif",
+            "notes": []
+        },
+        {
+            "repo": "Ankit-ku-panda/AI-Deepfake-Fake-News-Detection-System",
+            "readme": "https://github.com/Ankit-ku-panda/AI-Deepfake-Fake-News-Detection-System/blob/main/README.md",
+            "image_source": "",
+            "image": "",
+            "notes": [
+                "No usable repository image found; content-only card."
+            ]
+        },
+        {
+            "repo": "Ankit-ku-panda/ALL-IN-OSINT",
+            "readme": "https://github.com/Ankit-ku-panda/ALL-IN-OSINT/blob/main/README.md",
+            "image_source": "",
+            "image": "",
+            "notes": [
+                "No usable repository image found; content-only card."
+            ]
+        },
+        {
+            "repo": "Ankit-ku-panda/Android-AI-Anti-Peeping-Screen-Privacy-Guard",
+            "readme": "https://github.com/Ankit-ku-panda/Android-AI-Anti-Peeping-Screen-Privacy-Guard/blob/main/README.md",
+            "image_source": "",
+            "image": "",
+            "notes": [
+                "No usable repository image found; content-only card."
+            ]
+        },
+        {
+            "repo": "Ankit-ku-panda/Arduino_Uno_Projects",
+            "readme": "https://github.com/Ankit-ku-panda/Arduino_Uno_Projects/blob/main/README.md",
+            "image_source": "https://raw.githubusercontent.com/Ankit-ku-panda/Arduino_Uno_Projects/main/eye_oled/GitHub%20-%20Vin-X-Mod_OLED-Moving-Eyes-Arduino_%20OLED%20Eye%20Examples%20-%20Showing%20How%20to%20Move%20Eyeballs%20with%20Arduino%20Sketch_files/153982496-928ac225-e63b-4820-a838-be9d655d8ba9.jpg",
+            "image": "/assets/github/ankit-ku-panda-arduino-uno-projects.jpg",
+            "notes": []
+        },
+        {
+            "repo": "Ankit-ku-panda/Chrome-KeepTrail-Extension",
+            "readme": "https://github.com/Ankit-ku-panda/Chrome-KeepTrail-Extension/blob/main/README.md",
+            "image_source": "https://raw.githubusercontent.com/Ankit-ku-panda/Chrome-KeepTrail-Extension/main/activity-timeline.png",
+            "image": "/assets/github/ankit-ku-panda-chrome-keeptrail-extension.png",
+            "notes": []
+        },
+        {
+            "repo": "Ankit-ku-panda/Consent-Based-AI-Face-Finder",
+            "readme": "https://github.com/Ankit-ku-panda/Consent-Based-AI-Face-Finder/blob/main/README.md",
+            "image_source": "",
+            "image": "",
+            "notes": [
+                "No usable repository image found; content-only card."
+            ]
+        },
+        {
+            "repo": "Ankit-ku-panda/creative-login-page",
+            "readme": "https://github.com/Ankit-ku-panda/creative-login-page/blob/main/README.md",
+            "image_source": "https://raw.githubusercontent.com/Ankit-ku-panda/creative-login-page/main/bg.png",
+            "image": "/assets/github/ankit-ku-panda-creative-login-page.png",
+            "notes": []
+        },
+        {
+            "repo": "Ankit-ku-panda/CS_URL-Checker",
+            "readme": "https://github.com/Ankit-ku-panda/CS_URL-Checker/blob/main/README.md",
+            "image_source": "",
+            "image": "",
+            "notes": [
+                "No usable repository image found; content-only card."
+            ]
+        },
+        {
+            "repo": "Ankit-ku-panda/EmojiToTranslate",
+            "readme": "https://github.com/Ankit-ku-panda/EmojiToTranslate/blob/main/README.md",
+            "image_source": "https://raw.githubusercontent.com/Ankit-ku-panda/EmojiToTranslate/main/app/src/main/res/mipmap-hdpi/ic_launcher.webp",
+            "image": "/assets/github/ankit-ku-panda-emojitotranslate.webp",
+            "notes": []
+        },
+        {
+            "repo": "Ankit-ku-panda/Kali-Omarchy-Theme",
+            "readme": "https://github.com/Ankit-ku-panda/Kali-Omarchy-Theme/blob/main/README.md",
+            "image_source": "https://raw.githubusercontent.com/Ankit-ku-panda/Kali-Omarchy-Theme/main/docs/social-preview.png",
+            "image": "/assets/github/ankit-ku-panda-kali-omarchy-theme.png",
+            "notes": []
+        },
+        {
+            "repo": "Ankit-ku-panda/PYTHON_PROJECTS",
+            "readme": "https://github.com/Ankit-ku-panda/PYTHON_PROJECTS/blob/main/README.md",
+            "image_source": "",
+            "image": "",
+            "notes": [
+                "No usable repository image found; content-only card."
+            ]
+        },
+        {
+            "repo": "Ankit-ku-panda/Simple-Calculator",
+            "readme": "https://github.com/Ankit-ku-panda/Simple-Calculator/blob/main/README.md",
+            "image_source": "",
+            "image": "",
+            "notes": [
+                "No usable repository image found; content-only card."
+            ]
+        },
+        {
+            "repo": "Ankit-ku-panda/Simple-Osint",
+            "readme": "https://github.com/Ankit-ku-panda/Simple-Osint/blob/main/README.md",
+            "image_source": "",
+            "image": "",
+            "notes": [
+                "No usable repository image found; content-only card."
+            ]
+        },
+        {
+            "repo": "Ankit-ku-panda/SmartDustbin",
+            "readme": "https://github.com/Ankit-ku-panda/SmartDustbin/blob/main/README.md",
+            "image_source": "https://raw.githubusercontent.com/Ankit-ku-panda/SmartDustbin/main/Circuit.png",
+            "image": "/assets/github/ankit-ku-panda-smartdustbin.png",
+            "notes": []
+        }
+    ]
+}

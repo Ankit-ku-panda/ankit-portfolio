@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Portfolio admin
+  </title>
+  <link href="/style.css" rel="stylesheet"/>
+  <script defer="" src="/admin.js">
+  </script>
+ </head>
+ <body>
+  <main class="admin">
+   <a class="text-link" href="/">
+    ← Portfolio
+   </a>
+   <h1>
+    Portfolio control room.
+   </h1>
+   <p>
+    Open admin access: anyone with access to this server can edit the portfolio and read its inbox.
+   </p>
+   <p>
+    Edit the profile and project data. Read messages saved by the contact form.
+   </p>
+   <p id="status" role="status">
+   </p>
+   <section id="dashboard">
+    <div class="admin-controls">
+     <button id="export">
+      Export content JSON
+     </button>
+     <button id="refresh">
+      Refresh inbox
+     </button>
+    </div>
+    <section class="admin-panel">
+     <h2>
+      Profile &amp; projects
+     </h2>
+     <p>
+      For automatic GitHub additions, run SYNC-GITHUB.bat. Keep permanent project customizations in content/github-sync.json under overrides; syncing replaces this project list. Edit the JSON below. Images use paths such as /assets/terrapath.png. A successful save updates the website immediately.
+     </p>
+     <form id="editor">
+      <label>
+       Portfolio content
+       <textarea id="json" required="" rows="24" spellcheck="false"></textarea>
+      </label>
+      <button class="primary">
+       Save portfolio ↗
+      </button>
+     </form>
+    </section>
+    <section class="admin-panel">
+     <h2>
+      Contact inbox
+     </h2>
+     <p>
+      Messages are saved locally; no email delivery is configured.
+     </p>
+     <div id="messages">
+     </div>
+    </section>
+   </section>
+  </main>
+ </body>
+</html>
