@@ -18,7 +18,6 @@
   var useMemo = React.useMemo;
 
   var DEFAULT_TRACKS = [
-    { id: 'jfKfPfyJRdk', title: 'lofi hip hop radio', artist: 'Lofi Girl (live)', tag: 'Chill' },
     { id: '4xDzrJKXOOY', title: 'Synthwave Radio', artist: 'Lofi Girl (live)', tag: 'Chill' },
     { id: 'yKNxeF4KMsY', title: 'Yellow', artist: 'Coldplay', tag: 'Chill' },
     { id: 'djV11Xbc914', title: 'Take On Me', artist: 'a-ha', tag: 'Retro' },
