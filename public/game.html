@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prove You’re Human</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a class="brand cursor-target" href="index.html"><span class="brand-mark">◉</span> Home</a>
+  <nav>
+    <a class="cursor-target" href="index.html">Back to portfolio</a>
+    <a class="nav-contact cursor-target" href="index.html#contact">Contact <span>↗</span></a>
+  </nav>
+</header>
+
+<main>
+  <section class="captcha glare" aria-live="polite">
+    <div class="eyebrow">SECURITY CHECK</div>
+    <h1 id="title">Loading…</h1>
+    <div class="meter"><i id="meter"></i></div>
+    <div class="meter-label" id="hv">50% human</div>
+    <div id="stage"></div>
+  </section>
+</main>
+
+<div id="react-bits-bg" aria-hidden="true"></div>
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="react-bits-aurora.js"></script>
+<script src="fx.js"></script>
+<script>
+(function () {
+  var $ = function (s) { return document.querySelector(s); };
+  var stage = $('#stage'), title = $('#title'), h = 50, timer = 0;
+
+  function human(d) {
+    h = Math.max(0, Math.min(100, h + d));
+    $('#meter').style.width = h + '%';
+    $('#hv').textContent = h + '% human';
+  }
+  function show(t, html) { clearInterval(timer); title.textContent = t; stage.innerHTML = html; }
+  function shuffle(a) { return a.sort(function () { return Math.random() - .5; }); }
+
+  /* Round 1: the checkbox that does not want to be clicked */
+  function r1() {
+    h = 50; human(0);
+    show('Confirm you are human',
+      '<button class="check glare cursor-target" id="cb"><i></i> I am not a robot</button><p class="note" id="n1">One click. Allegedly.</p>');
+    var cb = $('#cb'), dodges = 0, lines = ['Suspiciously eager.', 'It moved. Or you did.', 'Last chance to act natural.'];
+    function dodge() {
+      human(-3);
+      cb.style.transform = 'translate(' + ((Math.random() * 150 - 75) | 0) + 'px,' + ((Math.random() * 70 - 35) | 0) + 'px)';
+      $('#n1').textContent = lines[dodges++];
+    }
+    cb.addEventListener('mouseenter', function () { if (dodges < 3) dodge(); });
+    cb.addEventListener('click', function () {
+      if (dodges < 3) return dodge();
+      cb.classList.add('ok'); human(5); setTimeout(r2, 700);
+    });
+  }
+
+  /* Round 2: sentient bread vs wet sponges */
+  function r2() {
+    var bread = ['🍞', '🥖', '🥐', '🥯', '🥨'], tiles = [], i;
+    for (i = 0; i < 5; i++) tiles.push([bread[i], 1]);
+    for (i = 0; i < 4; i++) tiles.push(['🧽', 0]);
+    shuffle(tiles);
+    show('Select every sentient bread',
+      '<div class="tiles">' + tiles.map(function (t, n) {
+        return '<button class="tile glare cursor-target" data-b="' + t[1] + '" aria-pressed="false" aria-label="tile ' + (n + 1) + '">' + t[0] + '</button>';
+      }).join('') + '</div><button class="action-button cursor-target" id="vf">Verify</button><p class="note" id="n2">Sponges are wet. Bread has feelings.</p>');
+    stage.querySelectorAll('.tile').forEach(function (b) {
+      b.onclick = function () { b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') !== 'true'); };
+    });
+    $('#vf').onclick = function () {
+      var ts = [].slice.call(stage.querySelectorAll('.tile')),
+          ok = ts.every(function (b) { return (b.getAttribute('aria-pressed') === 'true') === (b.dataset.b === '1'); });
+      if (ok) { human(8); r3(0); return; }
+      human(-8);
+      ts.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+      $('#n2').textContent = 'Wrong. A sponge was involved. Try again.';
+    };
+  }
+
+  /* Round 3: philosophy, scored by vibes */
+  var QS = [
+    ['A tree falls in an empty forest. Who files the noise complaint?',
+      [['The tree', 6, 'Bold. Litigious, but bold.'], ['The forest', 2, 'A corporate answer.'], ['Nobody. Sound is a rumor.', 8, 'Spicy. Very human.']]],
+    ['Is a hot dog a sandwich, or is a sandwich an open hot dog?',
+      [['Sandwich', -4, 'A robot would say that.'], ['Neither, it is a taco', 9, 'Chaos. Approved.'], ['I need a lawyer', 7, 'Reasonable.']]],
+    ['How many sponges does it take to prove you exist?',
+      [['Zero', -4, 'Efficient. Suspicious.'], ['Exactly one, wet', 10, 'Poetic. Damp. Human.'], ['I refuse to count', 7, 'Relatable.']]]
+  ];
+  function r3(n) {
+    if (n >= QS.length) return r4();
+    var q = QS[n];
+    show('Question ' + (n + 1) + ' of ' + QS.length + ': ' + q[0],
+      shuffle(q[1].slice()).map(function (a, i) {
+        return '<button class="action-button choice glare cursor-target" data-i="' + i + '">' + a[0] + '</button>';
+      }).join('') + '<p class="note" id="n3"></p>');
+    var opts = [].slice.call(stage.querySelectorAll('.choice'));
+    var order = opts.map(function (b) { return b.textContent; });
+    opts.forEach(function (b) {
+      b.onclick = function () {
+        var a = q[1].filter(function (x) { return x[0] === b.textContent; })[0];
+        opts.forEach(function (o) { o.disabled = true; });
+        human(a[1]); $('#n3').textContent = a[2];
+        setTimeout(function () { r3(n + 1); }, 1000);
+      };
+    });
+  }
+
+  /* Round 4: hold the slider at 50 while it fights back */
+  function r4() {
+    show('Final check: hold steady at 50',
+      '<input class="hold cursor-target" id="sl" type="range" min="0" max="100" value="20" aria-label="Hold at 50">' +
+      '<div class="hold-bar"><i id="pb"></i></div><p class="note" id="n4">Keep it between 44 and 56 for 4 seconds.</p>');
+    var sl = $('#sl'), pb = $('#pb'), good = 0, spent = 0;
+    timer = setInterval(function () {
+      spent += 50;
+      sl.value = +sl.value + (Math.random() - .5) * 7 + (sl.value > 50 ? 1.2 : -1.2);
+      good = Math.abs(sl.value - 50) <= 6 ? good + 50 : Math.max(0, good - 40);
+      pb.style.width = Math.min(100, good / 40) + '%';
+      if (good >= 4000) { human(10); end(); }
+      else if (spent >= 20000) { human(-10); end(); }
+    }, 50);
+  }
+
+  /* Result */
+  function end() {
+    var t = h >= 80 ? 'Verified: unreasonably human' : h >= 55 ? 'Verified: human, probably' : 'Result: a very polite robot';
+    var s = h >= 80 ? 'You hesitated, dodged and judged bread. Welcome.' :
+            h >= 55 ? 'Acceptable chaos. Please keep the sponges away from the servers.' :
+            'Too efficient. A human would have panicked over the sponges.';
+    show(t, '<p class="verdict">Humanity score: ' + h + '%. ' + s + '</p><button class="action-button primary-action cursor-target" id="again">Take the test again</button>');
+    $('#again').onclick = r1;
+  }
+
+  r1();
+})();
+</script>
+</body>
+</html>
