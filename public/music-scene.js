@@ -154,7 +154,7 @@
     paint('', 'Retro');
 
     var S = { playing: false, scratch: false, bpm: 100, rate: 1, id: null, tag: null };
-    var beat = 0, tt = 0, speed = 3, wx = 0, laserT = 0, turboT = 0, flipT = 0, last = 0, raf = 0, beatEl = null, lastB = -1, flashTimer = 0;
+    var beat = 0, tt = 0, speed = 3, wx = 0, laserT = 0, turboT = 0, flipT = 0, last = 0, raf = 0, beatEl = null, lastB = -1, flashTimer = 0, turboHeld = false;
 
     function frame(now) {
       raf = requestAnimationFrame(frame);
@@ -165,9 +165,10 @@
       if (live) beat += dt * S.bpm * S.rate / 60;
       var pulse = live ? Math.exp(-(beat % 1) * 5) : 0;
       turboT = Math.max(0, turboT - dt); laserT = Math.max(0, laserT - dt); flipT = Math.max(0, flipT - dt);
+      var turbo = turboT > 0 || turboHeld;
 
       // holding the record stops the road; playing speeds it up
-      var tgt = (S.playing ? 16 * S.rate : (S.scratch ? 0 : 3)) * (turboT > 0 ? 2.4 : 1) * mo;
+      var tgt = (S.playing ? 16 * S.rate : (S.scratch ? 0 : 3)) * (turbo ? 2.4 : 1) * mo;
       speed += (tgt - speed) * Math.min(1, dt * 2.5);
       var d = speed * dt;
       gridT.offset.y += d / 4; roadT.offset.y += d / 4;
@@ -184,18 +185,17 @@
       glowM.opacity = 0.3 + 0.5 * pulse;
       sun.scale.setScalar(1 + pulse * 0.05);
 
-      var camY = 2.6 + (turboT > 0 ? Math.sin(tt * 60) * 0.04 : 0);
+      var camY = 2.6 + (turbo ? Math.sin(tt * 60) * 0.04 : 0);
       cam.position.set(wx * 0.5, camY, camZ);
       cam.lookAt(wx * 0.2, camY - Math.tan(pitch * Math.PI / 180) * 20, camZ - 20);
-      var fov = baseFov + (turboT > 0 ? 12 : 0) + pulse * 1.5;
+      var fov = baseFov + (turbo ? 12 : 0) + pulse * 1.5;
       if (Math.abs(cam.fov - fov) > 0.01) { cam.fov += (fov - cam.fov) * 0.2; cam.updateProjectionMatrix(); }
 
-     lz.visible = laserT > 0 || S.playing;
-if (lz.visible) lasers.forEach(function (l, i) {
-  l.rotation.y = Math.sin(tt * 1.6 + i) * 0.5 + (i < 3 ? -0.25 : 0.25);
-  l.rotation.x = -0.05 - 0.1 * (0.5 + 0.5 * Math.sin(tt * 2.3 + i * 1.7));
-  l.material.opacity = 0.35 + 0.5 * pulse;
-});
+      lz.visible = laserT > 0;
+      if (lz.visible) lasers.forEach(function (l, i) {
+        l.rotation.y = Math.sin(tt * 1.6 + i) * 0.5 + (i < 3 ? -0.25 : 0.25);
+        l.rotation.x = -0.05 - 0.1 * (0.5 + 0.5 * Math.sin(tt * 2.3 + i * 1.7));
+      });
 
       // let the DJ deck glow on the beat
       if (!beatEl) beatEl = document.getElementById('mx-dj');
@@ -227,6 +227,7 @@ if (lz.visible) lasers.forEach(function (l, i) {
         if (o.id !== undefined && (o.id !== this._id || o.tag !== this._tag)) { this._id = o.id; this._tag = o.tag; paint(o.id, o.tag); }
       },
       sync: function () { beat = Math.round(beat); },
+      hold: function (n, on) { if (n === 'turbo') turboHeld = on; },
       fx: function (n) {
         if (n === 'laser') laserT = 4;
         else if (n === 'turbo') turboT = 2.4;
