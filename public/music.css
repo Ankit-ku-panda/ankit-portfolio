@@ -556,3 +556,6 @@ body:has(#music-app) #react-bits-bg { display:none!important; }
     .mx-hero { padding-top: 24px; }
     .mx-hero h1 { letter-spacing: -1.6px; }
 }
+
+/* hold-to-turbo: no text selection, scrolling or long-press menu on the buttons */
+.mx-fxbtn { touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
