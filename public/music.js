@@ -18,12 +18,16 @@
   var useMemo = React.useMemo;
 
   var DEFAULT_TRACKS = [
-    { id: 'jfKfPfyJRdk', title: 'lofi hip hop radio', artist: 'Lofi Girl (live)', tag: 'Chill' },
-    { id: '4xDzrJKXOOY', title: 'Synthwave Radio', artist: 'Lofi Girl (live)', tag: 'Chill' },
+    
+    
     { id: 'yKNxeF4KMsY', title: 'Yellow', artist: 'Coldplay', tag: 'Chill' },
     { id: 'djV11Xbc914', title: 'Take On Me', artist: 'a-ha', tag: 'Retro' },
     { id: 'FTQbiNvZqaY', title: 'Africa', artist: 'Toto', tag: 'Retro' },
     { id: 'Zi_XLOBDo_Y', title: 'Billie Jean', artist: 'Michael Jackson', tag: 'Retro' },
+    { id: 'lnp08UzZJ-c', title: 'Hindi Song 1', artist: 'Hindi', tag: 'Hindi' },
+    { id: 'c999H92thcw', title: 'Hindi Song 2', artist: 'Hindi', tag: 'Hindi' },
+    { id: 'sCIiVN0zIGE', title: 'Hindi Song 3', artist: 'Hindi', tag: 'Hindi' },
+    { id: 'SNo7YgLWYPY', title: 'Hindi Song 4', artist: 'Hindi', tag: 'Hindi' },
     { id: 'dQw4w9WgXcQ', title: 'Never Gonna Give You Up', artist: 'Rick Astley', tag: 'Retro' },
     { id: '5NV6Rdv1a3I', title: 'Get Lucky', artist: 'Daft Punk', tag: 'Retro' },
     { id: 'fJ9rUzIMcZQ', title: 'Bohemian Rhapsody', artist: 'Queen', tag: 'Rock' },
@@ -37,7 +41,7 @@
     { id: 'kJQP7kiw5Fk', title: 'Despacito', artist: 'Luis Fonsi ft. Daddy Yankee', tag: 'Pop' }
   ];
 
-  var BASE_TAGS = ['All', 'Chill', 'Retro', 'Rock', 'Pop'];
+  var BASE_TAGS = ['All', 'Chill', 'Hindi', 'Retro', 'Rock', 'Pop'];
   var STORE_KEY = 'akp-music-custom-v1';
 
   /* ---------- helpers ---------- */
