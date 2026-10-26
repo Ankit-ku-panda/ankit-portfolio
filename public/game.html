@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="The Dumb Arcade: three very silly games, two of them in 3D, on Ankit Panda's portfolio." name="description"/>
+  <title>Dumb Arcade · Ankit Panda</title>
+  <link href="./style.css?v=9" rel="stylesheet"/>
+  <link href="./game.css?v=2" rel="stylesheet"/>
+</head>
+<body class="gm-page">
+  <!-- Game page background (replaces the aurora used on the other pages) -->
+  <div class="gm-bg" aria-hidden="true">
+    <div class="gm-sun"></div>
+    <div class="gm-floor"></div>
+    <i class="gm-float f1"></i><i class="gm-float f2"></i><i class="gm-float f3"></i>
+    <i class="gm-float f4"></i><i class="gm-float f5"></i>
+  </div>
+
+  <a class="skip" href="#game">Skip to the games</a>
+
+  <header>
+    <a class="brand" href="index.html">
+      <span class="brand-mark">⌗</span>
+      ankit panda
+      <sup>LAB</sup>
+    </a>
+    <nav aria-label="Main navigation">
+      <a class="nav-link" href="index.html#projects">Projects</a>
+      <a class="nav-link" href="index.html#work">Work</a>
+      <a class="nav-link" href="index.html#about">Profile</a>
+      <a class="nav-contact" href="index.html#contact">Contact <span>↗</span></a>
+      <a class="nav-link" href="game.html" aria-current="page">Game</a>
+      <a class="nav-link nav-music" href="music.html"><span class="nav-eq" aria-hidden="true"><i></i><i></i><i></i></span>Music</a>
+    </nav>
+  </header>
+
+  <main id="game">
+    <section class="gm-hero">
+      <div class="eyebrow gm-eyebrow">06 / DUMB ARCADE</div>
+      <h1>Three games.<br/><mark>Zero purpose.</mark></h1>
+      <p class="gm-lede">A duck running late for a nap, a tower built from questionable cheese, and a field of potatoes that need whacking. Pick one.</p>
+    </section>
+
+    <div class="gm-tabs" role="group" aria-label="Choose a game">
+      <button class="gm-tab" type="button" data-game="duck" aria-pressed="true">
+        <span class="gm-ico">🦆</span><strong>Duck Dash</strong><small>3D runner</small>
+      </button>
+      <button class="gm-tab" type="button" data-game="stack" aria-pressed="false">
+        <span class="gm-ico">🧀</span><strong>Cheese Tower</strong><small>3D stacker</small>
+      </button>
+      <button class="gm-tab" type="button" data-game="whack" aria-pressed="false">
+        <span class="gm-ico">🥔</span><strong>Potato Whack</strong><small>2D panic</small>
+      </button>
+    </div>
+
+    <section class="gm-stage">
+      <div class="gm-hud">
+        <div><span class="gm-k">SCORE</span><b id="hud-score">0</b></div>
+        <div><span class="gm-k">BEST</span><b id="hud-best">0</b></div>
+        <div><span class="gm-k" id="hud-k3">LIVES</span><b id="hud-v3">-</b></div>
+      </div>
+
+      <div class="gm-board" id="gm-board">
+        <canvas id="gl" aria-label="3D game view"></canvas>
+
+        <div class="gm-whack" id="whack" hidden>
+          <div class="gm-holes" id="holes"></div>
+        </div>
+
+        <div class="gm-toast" id="gm-toast" aria-hidden="true"></div>
+
+        <div class="gm-overlay" id="gm-overlay">
+          <h2 id="ov-title">Ready?</h2>
+          <p id="ov-text"></p>
+          <button class="gm-go" id="ov-btn" type="button">Start</button>
+          <small id="ov-keys"></small>
+        </div>
+      </div>
+
+      <div class="gm-under">
+        <button class="gm-mini" id="gm-mute" type="button" aria-pressed="false">SOUND: ON</button>
+        <span class="gm-hint">Space or Enter starts. P pauses.</span>
+      </div>
+      <p class="gm-sr" id="gm-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer>
+    <span><strong>ankit panda /</strong> Built with curiosity.</span>
+    <div class="footer-links">
+      <a href="https://github.com/Ankit-ku-panda" rel="noopener" target="_blank">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/ankit-kumar-panda-29b650290" rel="noopener" target="_blank">LinkedIn ↗</a>
+    </div>
+    <span class="eyebrow">ODISHA, INDIA · 2026</span>
+  </footer>
+
+  <!-- three.js draws the 3D games. Everything in the scenes is built from simple shapes, no model files. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="game.js?v=2"></script>
+</body>
+</html>
