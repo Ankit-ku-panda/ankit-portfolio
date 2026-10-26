@@ -18,16 +18,12 @@
   var useMemo = React.useMemo;
 
   var DEFAULT_TRACKS = [
-    
-    
+    { id: 'jfKfPfyJRdk', title: 'lofi hip hop radio', artist: 'Lofi Girl (live)', tag: 'Chill' },
+    { id: '4xDzrJKXOOY', title: 'Synthwave Radio', artist: 'Lofi Girl (live)', tag: 'Chill' },
     { id: 'yKNxeF4KMsY', title: 'Yellow', artist: 'Coldplay', tag: 'Chill' },
     { id: 'djV11Xbc914', title: 'Take On Me', artist: 'a-ha', tag: 'Retro' },
     { id: 'FTQbiNvZqaY', title: 'Africa', artist: 'Toto', tag: 'Retro' },
     { id: 'Zi_XLOBDo_Y', title: 'Billie Jean', artist: 'Michael Jackson', tag: 'Retro' },
-    { id: 'lnp08UzZJ-c', title: 'Hindi Song 1', artist: 'Hindi', tag: 'Hindi' },
-    { id: 'c999H92thcw', title: 'Hindi Song 2', artist: 'Hindi', tag: 'Hindi' },
-    { id: 'sCIiVN0zIGE', title: 'Hindi Song 3', artist: 'Hindi', tag: 'Hindi' },
-    { id: 'SNo7YgLWYPY', title: 'Hindi Song 4', artist: 'Hindi', tag: 'Hindi' },
     { id: 'dQw4w9WgXcQ', title: 'Never Gonna Give You Up', artist: 'Rick Astley', tag: 'Retro' },
     { id: '5NV6Rdv1a3I', title: 'Get Lucky', artist: 'Daft Punk', tag: 'Retro' },
     { id: 'fJ9rUzIMcZQ', title: 'Bohemian Rhapsody', artist: 'Queen', tag: 'Rock' },
@@ -41,7 +37,7 @@
     { id: 'kJQP7kiw5Fk', title: 'Despacito', artist: 'Luis Fonsi ft. Daddy Yankee', tag: 'Pop' }
   ];
 
-  var BASE_TAGS = ['All', 'Chill', 'Hindi', 'Retro', 'Rock', 'Pop'];
+  var BASE_TAGS = ['All', 'Chill', 'Retro', 'Rock', 'Pop'];
   var STORE_KEY = 'akp-music-custom-v1';
 
   /* ---------- helpers ---------- */
@@ -547,6 +543,7 @@
       if (sceneRef.current) sceneRef.current.sync();
     }
     function fx(n) { if (sceneRef.current) sceneRef.current.fx(n); }
+    function hold(on) { if (sceneRef.current) sceneRef.current.hold('turbo', on); }
     var osd = { idle: 'STOP \u25A0', loading: 'LOADING...', playing: 'PLAY \u25B6', paused: 'PAUSE \u275A\u275A', error: 'NO SIGNAL' }[status];
     var live = ready && dur === 0 && playing;
     var pct = dur > 0 ? Math.min(100, (cur / dur) * 100) : 0;
@@ -625,7 +622,12 @@
           return h('button', {
             key: p[1], className: 'mx-fxbtn', type: 'button', style: { '--c': p[3], '--i': i },
             title: p[0] + ' (key ' + p[2] + ')', 'aria-label': p[0],
-            onClick: function (e) { spark(e); fx(p[1]); }
+            onClick: p[1] === 'turbo' ? undefined : function (e) { spark(e); fx(p[1]); },
+            onPointerDown: p[1] === 'turbo' ? function (e) { spark(e); hold(true); } : undefined,
+            onPointerUp: p[1] === 'turbo' ? function () { hold(false); } : undefined,
+            onPointerCancel: p[1] === 'turbo' ? function () { hold(false); } : undefined,
+            onPointerLeave: p[1] === 'turbo' ? function () { hold(false); } : undefined,
+            onContextMenu: function (e) { e.preventDefault(); }
           },
             h('span', { className: 'mx-fxring', 'aria-hidden': 'true' }),
             h('span', { className: 'mx-fxin' }, h('b', null, p[4]), p[0]));
