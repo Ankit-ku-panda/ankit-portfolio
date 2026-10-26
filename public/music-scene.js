@@ -188,11 +188,12 @@
       var fov = 58 + (turboT > 0 ? 12 : 0) + pulse * 1.5;
       if (Math.abs(cam.fov - fov) > 0.01) { cam.fov += (fov - cam.fov) * 0.2; cam.updateProjectionMatrix(); }
 
-      lz.visible = laserT > 0;
-      if (lz.visible) lasers.forEach(function (l, i) {
-        l.rotation.y = Math.sin(tt * 1.6 + i) * 0.5 + (i < 3 ? -0.25 : 0.25);
-        l.rotation.x = -0.05 - 0.1 * (0.5 + 0.5 * Math.sin(tt * 2.3 + i * 1.7));
-      });
+     lz.visible = laserT > 0 || S.playing;
+if (lz.visible) lasers.forEach(function (l, i) {
+  l.rotation.y = Math.sin(tt * 1.6 + i) * 0.5 + (i < 3 ? -0.25 : 0.25);
+  l.rotation.x = -0.05 - 0.1 * (0.5 + 0.5 * Math.sin(tt * 2.3 + i * 1.7));
+  l.material.opacity = 0.35 + 0.5 * pulse;
+});
 
       // let the DJ deck glow on the beat
       if (!beatEl) beatEl = document.getElementById('mx-dj');
